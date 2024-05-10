@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from sensorapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('temperature/', views.latest_temperature, name='latest_temperature'),
+    path('humidity/', views.latest_humidity, name='latest_humidity'),
 ]
